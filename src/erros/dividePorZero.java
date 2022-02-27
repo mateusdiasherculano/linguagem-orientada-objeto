@@ -6,6 +6,17 @@ import java.util.Scanner;
 
 public class dividePorZero {
 
+    public static void dividir (Scanner in)
+            throws InputMismatchException, ArithmeticException
+    {
+        System.out.println("Por favor, digite um numero: ");
+        int n = in.nextInt();
+        System.out.println("divisor: ");
+        int b = in.nextInt();
+
+        System.out.println(n / b);
+    }
+
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
@@ -13,19 +24,12 @@ public class dividePorZero {
 
         do {
             try {
-
-                System.out.println("Por favor, digite um numero: ");
-                int n = in.nextInt();
-                System.out.println("divisor: ");
-                int b = in.nextInt();
-
-                System.out.println(n / b);
+                dividir(in);
                 continua = false;
-            } catch (InputMismatchException e1) {
-                System.out.println("Os numeros devem ser inteiros. ");
+            } catch (InputMismatchException | ArithmeticException e1) {
+                System.err.println("Numero invalido.");
+                e1.getMessage();
                 in.nextLine();
-            } catch (ArithmeticException e2) {
-                System.out.println("O divisor deve ser diferente de zero. ");
             }
 
         } while (continua);

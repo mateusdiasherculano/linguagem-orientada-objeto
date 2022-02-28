@@ -16,7 +16,7 @@ public class ExpressaoRegular {
         (?m), Multilinhas
         (?s), Dottal */
 
-       b = "Java".matches("(?im)java");
+       b = "Java".matches("(?i)java");
 
 
         /* METACARACTERES

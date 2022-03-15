@@ -1,6 +1,6 @@
 package poo;
 
-public class conta {
+public class conta implements java.io.Serializable{
 
      String cliente;
      double saldo;

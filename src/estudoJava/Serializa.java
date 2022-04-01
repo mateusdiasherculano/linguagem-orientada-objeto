@@ -1,9 +1,7 @@
 package estudoJava;
 
-import poo.conta;
+import poo.Conta;
 import java.io.*;
-import java.util.Arrays;
-
 
 
 public class Serializa {
@@ -12,8 +10,8 @@ public class Serializa {
 
         String[] nomes = {"Ricardo", "Mateus", "Ruth"};
 
-        conta conta1 = new conta("Mateus", 111_222_333.444);
-        conta conta2 = new conta("keith", 111_222_333.454);
+        Conta conta1 = new Conta("Mateus", 111_222_333.444);
+        Conta conta2 = new Conta("keith", 111_222_333.454);
 
         /* ESCRITA DE OBJETO */
         FileOutputStream fos = new FileOutputStream("C:/estudos/files/objeto.ser");
@@ -25,8 +23,8 @@ public class Serializa {
         /* LEITURA DE OBJETO */
         FileInputStream fis = new FileInputStream("C:/estudos/files/objeto.ser");
         ObjectInputStream ois  = new ObjectInputStream(fis);
-        conta c1 = (conta) ois.readObject();
-        conta c2 = (conta) ois.readObject();
+        Conta c1 = (Conta) ois.readObject();
+        Conta c2 = (Conta) ois.readObject();
         ois.close();
 
         c1.exibeSAldo();

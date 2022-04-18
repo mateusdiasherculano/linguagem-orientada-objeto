@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+
 public class Recursividade {
 
 
@@ -40,17 +41,18 @@ public class Recursividade {
     }
 
     public static void listar(Path path) {
-        if(Files.isDirectory(path)){
+        if(Files.isRegularFile(path)){
             System.out.println(path.toAbsolutePath());
         }else{
-            System.out.println(path.toAbsolutePath());
+            String s = "\n" + path.toAbsolutePath();
+            System.out.println(s.toUpperCase());
             try {
                 DirectoryStream<Path> stream = Files.newDirectoryStream(path);
                 for (Path p : stream) {
-                    System.out.println(p.toAbsolutePath());
+                   listar(p);
                 }
             } catch (IOException e) {
-                System.out.println(e.getMessage());
+
             }
 
         }
